@@ -36,7 +36,7 @@
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
-        <button class="btn-login" id="loginBtn">Login</button>
+        <button class="btn-login" id="loginBtn" style="display:none">Login</button>
         <button class="btn-logout" id="logoutBtn" style="display: none;">Logout</button>
       </div>
     </div>
@@ -47,14 +47,13 @@
       <div class="hero-content">
         <h1 id="heroTitle">Light of Praise <span class="hero-accent">Song Bank</span></h1>
         <p class="hero-sub">“A shared library of songs for the choir”</p>
-        
       </div>
     </header>
 
     <section class="filter-section">
       <div class="search-wrapper">
         <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input type="search" id="searchInput" class="search-bar" placeholder="Search by title, lyrics or creator…" aria-label="search songs">
+        <input type="search" id="searchInput" class="search-bar" placeholder="Search by title, lyrics or creator… (press '/' to focus)" aria-label="search songs">
       </div>
       <div class="filter-row">
         <div class="filter-group">
@@ -82,6 +81,16 @@
             <option value="all">all</option>
           </select>
         </div>
+        <!-- Sort Dropdown -->
+        <div class="filter-group sort-group">
+          <label for="sortFilter" class="filter-label">Sort by</label>
+          <select id="sortFilter" class="filter-select">
+            <option value="latest" selected>Latest first</option>
+            <option value="oldest">Oldest first</option>
+            <option value="az">A-Z (title)</option>
+            <option value="za">Z-A (title)</option>
+          </select>
+        </div>
       </div>
     </section>
 
@@ -96,11 +105,10 @@
   </footer>
 
   <!-- Floating Add Button -->
-  <!-- Update the floating add button in index.html -->
-<button class="fab" id="addSongBtn" aria-label="Add song">
-  <span class="fab-icon">+</span>
-  <span class="fab-text">Add Song</span>
-</button>
+  <button class="fab" id="addSongBtn" aria-label="Add song">
+    <span class="fab-icon">+</span>
+    <span class="fab-text">Add Song</span>
+  </button>
 
   <!-- Auth Modal -->
   <div id="authModal" class="modal">
@@ -147,7 +155,7 @@
           <input type="password" id="regPassword" required placeholder="••••••••" minlength="6">
         </div>
         <div class="form-group">
-          <label for="regRepeatPassword">Repeat Password</label>
+          <label for="regRepeatPassword">Password</label>
           <input type="password" id="regRepeatPassword" required placeholder="••••••••" minlength="6">
         </div>
         <div class="form-group">
@@ -396,6 +404,11 @@
         <div class="welcome-icon">🙏</div>
       </div>
     </div>
+  </div>
+
+  <!-- Keyboard Shortcuts Hint (Optional) -->
+  <div class="keyboard-hint" style="display: none;">
+    <kbd>/</kbd> search · <kbd>s</kbd> sort
   </div>
 
   <script src="js/config.js"></script>
