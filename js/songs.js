@@ -56,14 +56,14 @@ document.addEventListener('DOMContentLoaded', function() {
     if (Math.abs(lastScrollTop - currentScroll) > scrollThreshold) {
       if (currentScroll > lastScrollTop && currentScroll > 50) {
         // Scrolling down - show text
-        fab.classList.remove('scrolled-up');
+        fab.classList.add('scrolled-up');
       } else if (currentScroll < lastScrollTop) {
         // Scrolling up - hide text
-        fab.classList.add('scrolled-up');
+        fab.classList.remove('scrolled-up');
       }
     }
     
-    // If at the very top, always show text
+    // If at the very top, show text
     if (currentScroll < 10) {
       fab.classList.remove('scrolled-up');
     }
